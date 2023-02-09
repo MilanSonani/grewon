@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if available_users %}
+        <h2>Users available at {{ date_time }}</h2>
+        <ul>
+        {% for user in available_users %}
+            <li>{{ user.first_name }} {{ user.last_name }}</li>
+        {% endfor %}
+        </ul>
+        <p>Availability: {{ availability }}</p>
+        {% else %}
+        <p>No available users at {{ date_time }}</p>
+    {% endif %}  
+</body>
+</html>
